@@ -1,0 +1,8 @@
+Finding Users by Instrument:
+Example:
+    - User.joins(:user_instruments).where(user_instruments: {instrument_id: 2})
+
+Assigning a level to a UserInstrument
+    - Must use ActiveRecord Extensions to do it semantically.
+
+    - otherwise, must retrieve user and instrument ids and retrieve explicitly
