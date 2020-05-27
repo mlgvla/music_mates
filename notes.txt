@@ -9,13 +9,13 @@ Assigning a level to a UserInstrument
 
 Update a level to a UserInstrument
 
-    - UserInstrument.all[2].update(level: "Professional")
+    - UserInstrument.all[2].update(level: "Professional") or as in first example
 
 Finding players by level
 
-    - UserInstrument.where(level: "Professional")
+    - UserInstrument.where(level: "Professional") or as in first example
 
 Finding players by instument and level
 
-    - UserInstrument.where("instrument_id = ? AND level = ?", 2, "Professional")
+    - UserInstrument.where("instrument_id = ? AND level = ?", 2, "Professional") or as in first example
 
