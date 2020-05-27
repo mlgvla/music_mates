@@ -5,4 +5,17 @@ Example:
 Assigning a level to a UserInstrument
     - Must use ActiveRecord Extensions to do it semantically.
 
-    - otherwise, must retrieve user and instrument ids and retrieve explicitly
+    - otherwise, must retrieve user and instrument ids and retrieve a UserInstrument Object explicitly, then assign level to level attribute
+
+Update a level to a UserInstrument
+
+    - UserInstrument.all[2].update(level: "Professional")
+
+Finding players by level
+
+    - UserInstrument.where(level: "Professional")
+
+Finding players by instument and level
+
+    - UserInstrument.where("instrument_id = ? AND level = ?", 2, "Professional")
+
