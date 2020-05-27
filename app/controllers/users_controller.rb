@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
 
+  # GET: /signup
+  get '/user/new' do
+    # if !logged_in?
+    #     erb :'users/signup'
+    # else
+    #     redirect to :'/users'
+    # end
+    erb :'/users/new'
+  end
+  
   # GET: /users
   get "/users" do
     erb :"/users/index.html"
@@ -12,6 +22,10 @@ class UsersController < ApplicationController
 
   # POST: /users
   post "/users" do
+    @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
+    @user.save
+    session[:user_id] = @user.id
+    binding.pry
     redirect "/users"
   end
 
