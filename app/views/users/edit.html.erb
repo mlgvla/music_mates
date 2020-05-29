@@ -1,1 +1,20 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h2>Edit <%= @user.first_name %> <%= @user.last_name  %>'s Profile</h2>
+<br>
+<div class="container">
+    <form action="/users/<%= @user.id %>" method="post">
+        <input id="hidden" type="hidden" name="_method" value="patch">
+            <% @instruments.each do |instrument| %>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="user[user_instrument_ids][]" value="<%= instrument.id %>" id="<%= instrument.id %>">
+                    <label class="form-check-label" for="<%= instrument.id %>">
+                        <%= instrument.name %>
+                    </label>
+                </div>   
+            <% end %> 
+        <div class="form-row mt-3">
+            <div class="col text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>        
+        </div> 
+    </form>
+</div>
