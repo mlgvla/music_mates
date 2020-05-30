@@ -57,6 +57,7 @@ class UsersController < ApplicationController
   get "/users/:id/edit" do
     @user = User.find(params[:id])
     @instruments = Instrument.all
+    # binding.pry
     erb :"/users/edit.html"
   end
 
