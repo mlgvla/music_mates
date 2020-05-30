@@ -1,6 +1,9 @@
 
 Sprint 1
 Finish Edit Page
+    - add placeholders to edit boxes
+    - populate checkboxes with user_instrument values on edit form
+    - redo visibility attribute type to string - public or private - public default
 Write PATCH route
 Create Show Page
 Delete Account
@@ -16,8 +19,7 @@ Helper Functions in UserInstrument Model?
 
 
 TODOS
-- add placeholders to edit boxes
-- populate checkboxes with user_instrument values on edit form
+
 - change visibility data type to string, rename to visibility
 - add user_instrument data to seed file
 - remove levels attribute from user_instrument table if not implemented in this version
