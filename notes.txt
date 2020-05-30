@@ -1,3 +1,20 @@
+
+TODOS
+- add placeholders to edit boxes
+- populate checkboxes with user_instrument values on edit form
+- change visibility data type to string
+- remove levels attribute from user_instrument table if not implemented in this version
+- hard code situation where no checkboxes are checked
+    if user[user_instrument_ids][] is empty, then delete all entries from user_instrument table for that user.
+
+- consider level a stretch feature for next version
+
+- insert authentication_required call before user routes to generate flash notices
+
+
+
+SAMPLE SEARCHES 
+
 Finding Users by Instrument:
 Example:
     - User.joins(:user_instruments).where(user_instruments: {instrument_id: 2})
