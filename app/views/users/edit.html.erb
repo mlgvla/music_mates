@@ -2,7 +2,42 @@
 <br>
 <div class="container">
     <form action="/users/<%= @user.id %>" method="post">
-        <input id="hidden" type="hidden" name="_method" value="patch">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+         <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="first_name">First Name</label>
+                <input type="text" class="form-control" id="first_name" name="first_name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="last_name">Last Name</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password">
+        </div>
+        <div>
+            <label for="inlineRadio1">Profile Visibility</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="public" checked>
+            <label class="form-check-label" for="inlineRadio1">Public</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="private">
+            <label class="form-check-label" for="inlineRadio2">Private</label>
+        </div>
+        <div>
+        <div>
+        <br>
+            <label>Instruments (You must select at least one)</label>
+ 
+        </div>
             <% @instruments.each do |instrument| %>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" name="user[user_instrument_ids][]" value="<%= instrument.id %>" id="<%= instrument.id %>">
@@ -11,6 +46,7 @@
                     </label>
                 </div>   
             <% end %> 
+        </div>
         <div class="form-row mt-3">
             <div class="col text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
