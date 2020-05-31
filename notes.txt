@@ -1,9 +1,9 @@
 
 Sprint 1
 Finish Edit Page
-    - add placeholders to edit boxes
-    - populate checkboxes with user_instrument values on edit form
-    - redo visibility attribute type to string - public or private - public default
+[x]   - add placeholders to edit boxes
+[x]   - populate checkboxes with user_instrument values on edit form
+[x]   - redo visibility attribute type to string - public or private - public default
 Write PATCH route
 Create Show Page
 Delete Account
