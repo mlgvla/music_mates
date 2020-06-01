@@ -1,6 +1,30 @@
-<h2>User Profile Page for <%= @user.first_name %>&nbsp<%= @user.last_name %>
-</h2>
+<h2><%= @user.first_name %>&nbsp<%= @user.last_name %></h2>
 
 <div class="container">
+    <div class="row">
+        <label for="email"><strong>Email:&nbsp&nbsp</strong></label><a href="mailto:<%= @user.email%>" id="email"><%= @user.email %></a>
+        <br>
+    </div>
+ 
+    <% if @user == current_user %>
+    <div class="row">
+        <label for="visibility"><strong>Visibility:&nbsp&nbsp</strong></label><%= @user.visibility.capitalize %>
+        <br>
+    </div>
+    <% end %>
 
+    <div class="row">
+        <label for="visibility"><strong>Instruments:&nbsp&nbsp</strong></label>
+        <ul>
+            <% @user.instruments.each do |instrument| %>
+                <li class="list-inline-item"><%= instrument.name %></li>
+            <% end %>
+        </ul>
+    </div>
+
+    <% if @user == current_user %>
+        <div class="text-center">
+            <a class="btn btn-primary" href="/users/<%= @user.id %>/edit" role="button">Edit Profile</a>
+        </div>
+    <% end %>
 </div>
