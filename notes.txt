@@ -4,8 +4,8 @@ Finish Edit Page
 [x]   - add placeholders to edit boxes
 [x]   - populate checkboxes with user_instrument values on edit form
 [x]   - redo visibility attribute type to string - public or private - public default
-Write PATCH route
-Create Show Page
+[x]   - Write PATCH route
+[x]   - Create Show Page
 Delete Account
 
 Sprint 2
@@ -20,11 +20,10 @@ Helper Functions in UserInstrument Model?
 
 TODOS
 
-- change visibility data type to string, rename to visibility
-- add user_instrument data to seed file
-- remove levels attribute from user_instrument table if not implemented in this version
-- hard code situation where no checkboxes are checked
-    if user[user_instrument_ids][] is empty, then delete all entries from user_instrument table for that user.
+[x] - change visibility data type to string, rename to visibility
+[x] - add user_instrument data to seed file
+[x] - remove levels attribute from user_instrument table if not implemented in this version
+[x] - fix bug where situation where no checkboxes are checked
 
 - consider level a stretch feature for next version
 
