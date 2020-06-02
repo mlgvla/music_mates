@@ -63,8 +63,13 @@ class UsersController < ApplicationController
 
   # PATCH: /users/5
   patch "/users/:id" do
-    binding.pry
-    redirect "/users/:id"
+    #bug fix - no checked checkbox results in no array being passed in params.  This creates an empty array.
+    if !params[:user].keys.include?("instrument_ids")
+      params[:user][:instrument_ids] = []
+    end
+    @user = User.find_by(params[:id])
+    @user.update(params[:user])
+    redirect "/users/#{@user.id}"
   end
 
   # DELETE: /users/5/delete
