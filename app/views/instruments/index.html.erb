@@ -1,1 +1,9 @@
-<h1>This is the Model's index page.</h1>
+<h2>Find Music Mates by Instrument.</h2>
+<br>
+<div class="container">
+    <% @instruments.each do |instrument| %>
+        <div>
+            <a href="/instruments/<%= instrument.id %>"><%= instrument.name %></a>
+        </div>
+    <% end %>
+</div>
