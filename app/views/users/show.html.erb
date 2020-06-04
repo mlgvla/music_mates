@@ -27,4 +27,13 @@
             <a class="btn btn-primary" href="/users/<%= @user.id %>/edit" role="button">Edit Profile</a>
         </div>
     <% end %>
+    <br>
+     <% if @user == current_user %>
+        <form action="/users/<%= @user.id %>/delete" method="post">
+        <input type="hidden" name="_method" value="delete">
+            <div class="text-center">
+                <input class="btn btn-primary" type="submit" value="Delete Account">
+            </div>
+        </form>
+    <% end %>
 </div>
