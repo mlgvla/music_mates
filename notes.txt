@@ -6,15 +6,16 @@ Finish Edit Page
 [x]   - redo visibility attribute type to string - public or private - public default
 [x]   - Write PATCH route
 [x]   - Create Show Page
-Delete Account
+[x]   - Delete User Account - make sure to also delete UserInstruments for User.
+            - use destroy flag for :user_instruments https://guides.rubyonrails.org/association_basics.html
 
 Sprint 2
 Finish Navigation Buttons between pages
 Consider Navbar for Search and Logout
-Activate Flash Messages
+Activate Flash Messages - finish "you must be logged in"
 
 Sprint 3
-Implement Find by Instrument - UserInstrument Controller
+[x]   - Implement Find by Instrument - UserInstrument Controller
 Helper Functions in UserInstrument Model?
 
 
@@ -24,6 +25,10 @@ TODOS
 [x] - add user_instrument data to seed file
 [x] - remove levels attribute from user_instrument table if not implemented in this version
 [x] - fix bug where situation where no checkboxes are checked
+[ ] - make instrument list on musician show page hyperlinks
+[ ] - use Bootstrap lists on Instrument show page and Profile pages (for instruments)
+[ ] - use instrument index as a landing page after login
+[ ] - no access to all but welcome page without login - refer to Mixshare
 
 - consider level a stretch feature for next version
 
