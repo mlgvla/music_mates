@@ -25,10 +25,16 @@ class UsersController < ApplicationController
     erb :"/users/login.html"
   end
 
+  # GET:  "/users/logout"
+  get "/users/logout" do
+    session.clear
+    redirect "/"
+  end
+  
   # POST: /users
   post "/users" do
     #CHECK THAT ALL FIELDS ARE FILLED IN - ELSE RETURN TO NEW PAGE - VALIDATION!!!
-    @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
+    @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password], visibility: "public")
     @user.save
     session[:user_id] = @user.id
     #PROBABLY REDIRECT TO SHOW PAGE /users/:id
@@ -55,10 +61,14 @@ class UsersController < ApplicationController
 
   # GET: /users/5/edit
   get "/users/:id/edit" do
-    @user = User.find(params[:id])
-    @instruments = Instrument.all
-    # binding.pry
-    erb :"/users/edit.html"
+    if !authorized_to_edit_profile?(params[:id])
+      flash[:notice] = "You are only authorized to edit your own profile."
+      redirect "/"
+    else
+      @user = User.find(params[:id])
+      @instruments = Instrument.all
+      erb :"/users/edit.html"
+    end
   end
 
   # PATCH: /users/5
@@ -67,13 +77,15 @@ class UsersController < ApplicationController
     if !params[:user].keys.include?("instrument_ids")
       params[:user][:instrument_ids] = []
     end
-    @user = User.find_by(params[:id])
+    @user = User.find(params[:id])
     @user.update(params[:user])
     redirect "/users/#{@user.id}"
   end
 
   # DELETE: /users/5/delete
   delete "/users/:id/delete" do
-    redirect "/users"
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect "/"
   end
 end
