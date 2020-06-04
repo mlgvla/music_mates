@@ -78,7 +78,6 @@ class UsersController < ApplicationController
       params[:user][:instrument_ids] = []
     end
     @user = User.find(params[:id])
-    binding.pry
     @user.update(params[:user])
     redirect "/users/#{@user.id}"
   end
