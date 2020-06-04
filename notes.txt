@@ -15,7 +15,7 @@ Consider Navbar for Search and Logout
 Activate Flash Messages - finish "you must be logged in"
 
 Sprint 3
-[x]   - Implement Find by Instrument - UserInstrument Controller
+[ ]   - Implement Find by Instrument/public only - UserInstrument Controller
 Helper Functions in UserInstrument Model?
 
 
@@ -29,6 +29,7 @@ TODOS
 [ ] - use Bootstrap lists on Instrument show page and Profile pages (for instruments)
 [ ] - use instrument index as a landing page after login
 [ ] - no access to all but welcome page without login - refer to Mixshare
+[ ] - don't show private users
 
 - consider level a stretch feature for next version
 

@@ -19,7 +19,9 @@ class InstrumentsController < ApplicationController
   # GET: /instruments/5
   get "/instruments/:id" do
     @instrument = Instrument.find(params[:id])
-    @musicians = User.joins(:user_instruments).where(user_instruments: {instrument_id: params[:id]})
+
+    @musicians = User.where(visibility: "public").joins(:user_instruments).where(user_instruments: {instrument_id: params[:id]})
+    # @musicians = User.joins(:user_instruments).where(user_instruments: {instrument_id: params[:id]})
     erb :"/instruments/show.html"
   end
 
