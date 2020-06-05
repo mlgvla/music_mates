@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  
   # GET: /signup
   get '/user/new' do
     # if !logged_in?
@@ -55,12 +55,14 @@ class UsersController < ApplicationController
   
   # GET: /users/5
   get "/users/:id" do
+    authentication_required
     @user = User.find(params[:id])
     erb :"/users/show.html"
   end
 
   # GET: /users/5/edit
   get "/users/:id/edit" do
+    authentication_required
     if !authorized_to_edit_profile?(params[:id])
       flash[:notice] = "You are only authorized to edit your own profile."
       redirect "/"
@@ -84,6 +86,7 @@ class UsersController < ApplicationController
 
   # DELETE: /users/5/delete
   delete "/users/:id/delete" do
+    authentication_required
     @user = User.find(params[:id])
     @user.destroy
     redirect "/"

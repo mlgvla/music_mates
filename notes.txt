@@ -26,8 +26,9 @@ TODOS
 [ ] - make instrument list on musician show page hyperlinks
 [ ] - use Bootstrap lists on Instrument show page and Profile pages (for instruments)
 [ ] - use instrument index as a landing page after login
-[ ] - no access to all but welcome page without login - refer to Mixshare
-[X] - don't show private users
+[x] - no access to all but welcome page without login - refer to Mixshare
+[x] - don't show private users
+[ ] - test for empty fields in sign up and log in - send flash messages
 
 - consider level a stretch feature for next version
 

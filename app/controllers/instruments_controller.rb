@@ -2,6 +2,7 @@ class InstrumentsController < ApplicationController
 
   # GET: /instruments
   get "/instruments" do
+    authentication_required
     @instruments = Instrument.all
     erb :"/instruments/index.html"
   end
@@ -18,6 +19,7 @@ class InstrumentsController < ApplicationController
 
   # GET: /instruments/5
   get "/instruments/:id" do
+    authentication_required
     @instrument = Instrument.find(params[:id])
 
     @musicians = User.where(visibility: "public").joins(:user_instruments).where(user_instruments: {instrument_id: params[:id]})
