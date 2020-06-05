@@ -17,7 +17,7 @@
         <label for="visibility"><strong>Instruments:&nbsp&nbsp</strong></label>
         <ul>
             <% @user.instruments.each do |instrument| %>
-                <li class="list-inline-item"><%= instrument.name %></li>
+                <li class="list-inline-item"><a href="/instruments/<%= instrument.id %>"><%= instrument.name %></a></li>
             <% end %>
         </ul>
     </div>
