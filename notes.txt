@@ -28,9 +28,11 @@ TODOS
 [ ] - use instrument index as a landing page after login
 [x] - no access to all but welcome page without login - refer to Mixshare
 [x] - don't show private users
-[ ] - test for empty fields in sign up and log in - send flash messages
-[ ] - uniqueness of login credentials
+[x] - test for empty fields in sign up and log in - send flash messages
+[x] - uniqueness of login credentials
 [ ] - contributor's guide
+[ ] - sort by last name when showing musicians
+[ ] - add flash error to incorrect edit submit
 
 - consider level a stretch feature for next version
 

@@ -35,10 +35,14 @@ class UsersController < ApplicationController
   post "/users" do
     #CHECK THAT ALL FIELDS ARE FILLED IN - ELSE RETURN TO NEW PAGE - VALIDATION!!!
     @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password], visibility: "public")
-    @user.save
-    session[:user_id] = @user.id
-    #PROBABLY REDIRECT TO SHOW PAGE /users/:id
-    redirect :"/users/#{@user.id}" 
+    if @user.save
+      session[:user_id] = @user.id
+      flash[:message] = "Welcome to Music Mates, #{@user.first_name}!"
+      redirect :"/users/#{@user.id}"
+    else
+      flash[:error] = "Account creation failed:  #{@user.errors.full_messages.to_sentence}."
+      redirect :"/users/new"
+    end
   end
 
   post "/users/login" do
@@ -47,8 +51,10 @@ class UsersController < ApplicationController
     
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
+      flash[:message] = "Welcome back to Music Mates, #{@user.first_name}!"
       redirect :"/users/#{@user.id}"
     else
+      flash[:error] = "Login failed:  Please try again."
       redirect :"/users/login"
     end
   end
