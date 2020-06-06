@@ -54,8 +54,14 @@
     
       
     <!-- Added ERB for Flash notices -->
-    <%= "<div class='notice'>#{flash[:notice]}</div>" if flash[:notice]  %>
-    
+        <!-- <%= "<div class='notice'>#{flash[:notice]}</div>" if flash[:notice]  %> -->
+    <% if flash[:error] %>
+      <h3 style="color:red;"><%= flash[:error] %></h3>
+    <% end %>
+
+    <% if flash[:message] %>
+      <h3 style="color:green;"><%= flash[:message] %></h3>
+    <% end %>
 
 
         <%= yield %>

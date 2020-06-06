@@ -11,6 +11,13 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "i_love_lamp"
   end
 
+  #THIS IS TO INCLUDE AUTHENTICATION OF LOGIN EXCEPT FOR ROUTES LISTED IN THE BRACKETS
+  #IF USING, CHANGE ROUTE IN USER CONTROLLER TO SIGNUP FROM NEW, SO AS NOT TO CONFLICT WITH OTHER NEW ROUTES
+  # before do
+  #   pass if %w[signup login logout].include? request.path_info.split('/')[2]
+  #   authentication_required
+  # end
+
   get "/" do
     if logged_in?
       redirect "/users/#{current_user.id}"
@@ -37,7 +44,7 @@ class ApplicationController < Sinatra::Base
 
     def authentication_required
       if !logged_in?        
-        flash[:notice] = "You must be logged in to view website."
+        flash[:error] = "You must be logged in to view website."
         redirect '/'
       end
     end

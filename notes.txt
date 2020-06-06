@@ -29,6 +29,8 @@ TODOS
 [x] - no access to all but welcome page without login - refer to Mixshare
 [x] - don't show private users
 [ ] - test for empty fields in sign up and log in - send flash messages
+[ ] - uniqueness of login credentials
+[ ] - contributor's guide
 
 - consider level a stretch feature for next version
 

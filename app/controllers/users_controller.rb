@@ -64,7 +64,7 @@ class UsersController < ApplicationController
   get "/users/:id/edit" do
     authentication_required
     if !authorized_to_edit_profile?(params[:id])
-      flash[:notice] = "You are only authorized to edit your own profile."
+      flash[:error] = "You are only authorized to edit your own profile."
       redirect "/"
     else
       @user = User.find(params[:id])
