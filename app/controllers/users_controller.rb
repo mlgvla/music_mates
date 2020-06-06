@@ -86,8 +86,12 @@ class UsersController < ApplicationController
       params[:user][:instrument_ids] = []
     end
     @user = User.find(params[:id])
-    @user.update(params[:user])
-    redirect "/users/#{@user.id}"
+    if @user.update(params[:user])
+      redirect "/users/#{@user.id}"
+    else
+      flash[:error] = "Profile update failed: #{@user.errors.full_messages.to_sentence}."
+      redirect "/users/#{@user.id}/edit"
+    end
   end
 
   # DELETE: /users/5/delete
