@@ -32,7 +32,8 @@ TODOS
 [x] - uniqueness of login credentials
 [ ] - contributor's guide
 [x] - sort by last name when showing musicians
-[ ] - add flash error to incorrect edit submit - redirect back to edit page
+[x] - add flash error to incorrect edit submit - redirect back to edit page
+[ ] - order instruments list on profile page by instrument table order
 
 - consider level a stretch feature for next version
 
