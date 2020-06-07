@@ -14,5 +14,7 @@ Visit localhost:9393
 
 Enjoy!
 
+MIT LICENSE LINK:  https://github.com/mlgvla/music_mates/blob/master/LICENSE.md
+
 
 
