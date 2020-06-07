@@ -34,6 +34,7 @@ TODOS
 [x] - sort by last name when showing musicians
 [x] - add flash error to incorrect edit submit - redirect back to edit page
 [ ] - order instruments list on profile page by instrument table order
+[ ] - flash message after account deleted
 
 - consider level a stretch feature for next version
 

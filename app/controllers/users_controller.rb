@@ -99,6 +99,7 @@ class UsersController < ApplicationController
     authentication_required
     @user = User.find(params[:id])
     @user.destroy
+    flash[:message] = "Your account has successfully been deleted"
     redirect "/"
   end
 end
