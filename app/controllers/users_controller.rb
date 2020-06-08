@@ -1,19 +1,19 @@
 class UsersController < ApplicationController
   
   # GET: /signup
-  get '/user/new' do
-    # if !logged_in?
-    #     erb :'users/signup'
-    # else
-    #     redirect to :'/users'
-    # end
-    erb :'/users/new'
-  end
+  # get '/user/new' do
+  #   if !logged_in?
+  #       erb :'users/signup'
+  #   else
+  #       redirect to :'/users'
+  #   end
+  #   erb :'/users/new'
+  # end
   
-  # GET: /users
-  get "/users" do
-    erb :"/users/index.html"
-  end
+  # # GET: /users
+  # get "/users" do
+  #   erb :"/users/index.html"
+  # end
 
   # GET: /users/new
   get "/users/new" do
