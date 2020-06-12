@@ -18,6 +18,10 @@
         <ul>
             <% @user.instruments.each do |instrument| %>
                 <li class="list-inline-item"><a href="/instruments/<%= instrument.id %>"><%= instrument.name %></a></li>
+                <!-- <% instrument.users.each do |user| %>
+                    <%= user.first_name %>
+                <% end %> -->
+
             <% end %>
         </ul>
     </div>
